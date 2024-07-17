@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "ThemDanhMuc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model DanhMuc
+<div class="container contain">
+    <form class="form-group" method="post">
+        <div>
+            <label asp-for="Namedanhmuc">Tên Danh mục</label>
+            <input asp-for="Namedanhmuc" class="form-control" />
+            <span asp-validation-for="Namedanhmuc" class="text-danger"></span>
+        </div>
+        <!-- Hidden Description field to set DateTime -->
+        <div style="display: none;">
+            <input asp-for="Description" class="form-control" value="@DateTime.Now" />
+        </div>
+        <button type="submit" class="btn btn-primary">Thêm danh mục</button>
+    </form>
+</div>
+
+

@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "HienSanPham";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container contain">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tên San Phẩm</th>
+                <th>Hình ảnh Sản phẩm</th>
+                <th>Giá bán</th>
+                <th>Giảm Giá</th>
+                <th>Mô Tả</th>
+                <th>Danh Mục</th>
+                <th>chức năng</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sanpham in ViewBag.sanpham) //đây là 1 vòng lặp lấy toàn bộ trong database var sanpham là tên thuộc tính lưu giá trị trong viewbag
+            {
+                <tr>
+                    <td>@sanpham.TenSanPham</td>
+                    <td><img src="data:image/png;base64,@sanpham.ImgDaiDien" /></td>
+                    <td>@sanpham.GiaSanpham</td>
+                    <td>@sanpham.GiamGia</td>
+                    <td>@sanpham.MoTaSanPham</td>
+                    <td>@sanpham.danhmuc.Namedanhmuc</td>
+                    <td>
+                        <a class="btn btn-warning" asp-action="SuaSanpham" asp-route-id="@sanpham.IdSanPham">Sửa</a>
+                        <a class="btn btn-danger" asp-action="XoaSanpham" asp-route-id="@sanpham.IdSanPham">Xoá</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    <a class="btn btn-primary" asp-action="ThemSanpham">Thêm Sản Phẩm</a>
+</div>
+
