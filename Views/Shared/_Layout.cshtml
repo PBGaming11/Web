@@ -75,7 +75,7 @@
                                 <a href="#"><i class='bx bxl-youtube'></i></a>
                             </div>
                             <div class="header__top__right__auth">
-                                <a href="#"><i class='bx bx-user'></i>Đăng Nhập</a>
+                                <partial name="_LoginPartial" />
                             </div>
                         </div>
                     </div>
@@ -92,10 +92,11 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li><a asp-action="Index" asp-controller="Home" class="nav-link @(ViewContext.RouteData.Values["controller"].ToString() == "Home" ? "active" : "")"><i class='bx bxs-home'></i>Home</a></li>
-                            <li><a asp-action="Index" asp-controller="Shop" class="nav-link @(ViewContext.RouteData.Values["controller"].ToString() == "Shop" ? "active" : "")">Shop</a></li>
-                            <li><a asp-action="Index" asp-controller="product_detail" class="nav-link @(ViewContext.RouteData.Values["controller"].ToString() == "product_detail" ? "active" : "")">Product Details</a></li>
-                            <li><a asp-action="Index" asp-controller="cart" class="nav-link @(ViewContext.RouteData.Values["controller"].ToString() == "cart" ? "active" : "")">Cart</a></li>
+                            <li><a asp-action="Index" asp-controller="Home" class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" ? "active" : "")"><i class='bx bxs-home'></i> Home</a></li>
+                            <li><a asp-action="Index" asp-controller="Shop" class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Shop" ? "active" : "")">Shop</a></li>
+                            <li><a asp-action="Index" asp-controller="product_detail" class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "product_detail" ? "active" : "")">Product Details</a></li>
+                            <li><a asp-action="Index" asp-controller="cart" class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "cart" ? "active" : "")">Cart</a></li>
+
                         </ul>
                     </nav>
                 </div>
