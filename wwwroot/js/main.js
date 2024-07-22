@@ -281,5 +281,9 @@
         cursorborderradius: 50,
         horizrailenabled: false
     });
-
+    /*------------------
+        onTop
+  --------------------*/
+    
 })(jQuery);
+
