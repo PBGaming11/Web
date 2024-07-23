@@ -15,9 +15,17 @@ namespace Web.Controllers
             _db = db;
         }
 
-        public IActionResult Index(double? minPrice, double? maxPrice, string sortOrder, int pageNumber = 1, int pageSize = 5)
+        public IActionResult Index(int? categoryId, double? minPrice, double? maxPrice, string sortOrder, int pageNumber = 1, int pageSize = 5)
         {
             var products = _db.sanpham.AsQueryable();
+            DanhMuc selectedCategory = null;
+
+            // Filter by category
+            if (categoryId.HasValue)
+            {
+                products = products.Where(p => p.DanhmucId == categoryId.Value);
+                selectedCategory = _db.danhmuc.Find(categoryId.Value);
+            }
 
             // Filter by price range
             if (minPrice.HasValue)
@@ -51,9 +59,10 @@ namespace Web.Controllers
             ViewBag.MinPrice = minPrice;
             ViewBag.MaxPrice = maxPrice;
             ViewBag.SortOrder = sortOrder;
+            ViewBag.CategoryId = categoryId;
+            ViewBag.SelectedCategory = selectedCategory;
 
             return View(paginatedProducts);
         }
-
     }
 }

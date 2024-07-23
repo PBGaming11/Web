@@ -1001,7 +1001,7 @@ ol {
     font-size: 15px;
     font-weight: 500;
     color: #111111;
-    margin-right: 18px;
+    margin-right: 0;
     display: inline-block;
     position: relative;
 }
@@ -1010,7 +1010,6 @@ ol {
         position: absolute;
         right: -14px;
         top: 0;
-        content: "/";
     }
 
     .breadcrumb__links a i {
@@ -1022,6 +1021,7 @@ ol {
     font-weight: 500;
     color: #888888;
     display: inline-block;
+    margin-right: 5px;
 }
 /*---------------------
   Sidebar
