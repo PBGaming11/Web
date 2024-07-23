@@ -9,5 +9,6 @@ namespace Web.Models
         [Required] //yêu cầu bắt buộc
         public string? Namedanhmuc { get; set; }
         public DateTime Description { get; set; } = DateTime.Now;
+
     }
 }

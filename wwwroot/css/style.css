@@ -1310,17 +1310,23 @@ ol {
 
 .product__item {
     margin-bottom: 50px;
+    transition: box-shadow 0.3s ease;
 }
-
-    .product__item:hover .product__item__pic .product__item__pic__hover {
+.click{
+    cursor: pointer;
+}
+    .product__item:hover {
         bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border: 0.5px solid #ebebeb;
     }
 
-.product__item__pic {
+.product__discount__item__pic {
     height: 270px;
     position: relative;
     overflow: hidden;
 }
+
 
 .product__item__pic__hover {
     position: absolute;
@@ -1346,16 +1352,13 @@ ol {
         }
 
         .product__item__pic__hover li:hover a {
-            background: #DC0000;
-            border-color: #DC0000;
+            background: #7fad39;
+            border-color: #7fad39;
         }
 
             .product__item__pic__hover li:hover a i {
                 color: #ffffff;
                 transform: rotate(360deg);
-            }
-            .product__item__pic__hover li:hover a span {
-                color: #ffffff;
             }
 
         .product__item__pic__hover li a {
@@ -1386,20 +1389,45 @@ ol {
                 transition: all, 0.3s;
             }
 
+
 .product__item__text {
-    text-align: center;
-    padding-top: 22px;
+    width: 200px; /* Adjust the width as needed */
+    padding-bottom: 10px;
+    padding-top: 5px;
 }
 
-    .product__item__text h6 a {
-        font-size: 14px;
-        color: #111111;
+    .product__item__text h6 {
+        margin: 0; /* Remove default margins if any */
+        padding: 0; /* Remove default padding if any */
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
     }
 
-    .product__item__text .rating {
-        line-height: 18px;
-        margin-bottom: 5px;
-    }
+        .product__item__text h6 a {
+            font-size: 14px;
+            color: #111111;
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding-left: 5px;
+        }
+        
+.price-display {
+    font-family: Arial, sans-serif; /* You can change the font-family as needed */
+    font-size: 16px; /* Adjust the font size */
+    color: red; /* Adjust the color */
+    padding-left: 5px;
+}
+.product__item__text h5 {
+    margin-bottom: 10px;
+}
+
+.product__item__text .rating {
+    line-height: 18px;
+    margin-bottom: 5px;
+}
 
         .product__item__text .rating i {
             font-size: 10px;
@@ -1415,14 +1443,23 @@ ol {
         color: #111111;
         font-weight: 600;
     }
-
-        .product__item__text .product__price span {
-            font-size: 14px;
-            color: #b1b0b0;
-            text-decoration: line-through;
-            margin-left: 4px;
-        }
-
+.product__item__text .rating{
+    padding-left: 10px;
+}
+.product__item__text .rating span {
+    font-size:14px;
+}
+.product__item__text .product__price span {
+    font-size: 14px;
+    color: #b1b0b0;
+    text-decoration: line-through;
+    margin-left: 4px;
+}
+.product__item__text .sold{
+    font-weight: 400;
+    font-size: 14px;
+    padding-left: 10px;
+}
 /*---------------------
   Shop Details
 -----------------------*/
@@ -2096,7 +2133,40 @@ ol {
         text-align: center;
         letter-spacing: 2px;
     }
+.product__pagination {
+    padding-top: 25px;
+    text-align: right;
+}
 
+    .product__pagination a {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 700;
+        color: #111111;
+        height: 30px;
+        width: 30px;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        line-height: 30px;
+        text-align: center;
+    }
+
+        .product__pagination a.active {
+            border-color: #111111;
+        }
+
+        .product__pagination a:hover {
+            border-color: #111111;
+        }
+
+    .product__pagination span {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 700;
+        color: #111111;
+        padding-left: 10px;
+        padding-right: 15px;
+    }
 /*---------------------
   Checkout
 -----------------------*/

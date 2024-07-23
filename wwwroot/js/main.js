@@ -286,4 +286,11 @@
   --------------------*/
     
 })(jQuery);
-
+document.addEventListener('DOMContentLoaded', () => {
+    const prices = document.querySelectorAll('.price-display');
+    prices.forEach(price => {
+        let priceText = price.textContent.trim();
+        let formattedPrice = priceText.replace('000 ', '').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' đ';
+        price.textContent = formattedPrice;
+    });
+});
